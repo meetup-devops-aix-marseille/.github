@@ -22,10 +22,10 @@ jobs:
       id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - id: build
-        uses: hoverkraft-tech/ci-github-publish/actions/deploy/jekyll@607069025f6c1312680ed0864c4d9f4338b82dfe # 0.26.5
+        uses: hoverkraft-tech/ci-github-publish/actions/deploy/jekyll@ed354ada70b9f518c2bb663e18a80041c2cf5156 # 0.27.1
         with:
           pages: |
             README.md
@@ -36,6 +36,6 @@ jobs:
           site-path: website
 
       - id: deploy
-        uses: hoverkraft-tech/ci-github-publish/actions/deploy/github-pages@607069025f6c1312680ed0864c4d9f4338b82dfe # 0.26.5
+        uses: hoverkraft-tech/ci-github-publish/actions/deploy/github-pages@ed354ada70b9f518c2bb663e18a80041c2cf5156 # 0.27.1
         with:
           build-path: ${{ steps.build.outputs.build-path }}
