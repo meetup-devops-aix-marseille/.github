@@ -27,9 +27,9 @@ title: Evenements
 | Juin      | [2026-06-11](https://www.meetup.com/cloud-native-aix-marseille/events/315050054) | Sopra (Aix)               |
 | Juillet   | [2026-07-02](https://www.meetup.com/cloud-native-aix-marseille/events/315382395) | Softway Medical           |
 | Août      | -                                                                                | -                         |
-| Septembre | 2026-09-10                                                                       | Aix (à préciser) ?        |
+| Septembre | [2026-09-10](https://www.meetup.com/cloud-native-aix-marseille/events/316400745) | Linxo (Aix)               |
 | Octobre   | 2026-10-08                                                                       | Marseille (à préciser) ?  |
-| Novembre  | 2026-11-05                                                                       | Aix (à préciser) ?        |
+| Novembre  | 2026-11-05                                                                       | Easy Partner (Aix)        |
 | Décembre  | -                                                                                | -                         |
 
 ## 2025
