@@ -1,0 +1,52 @@
+name: 📅 Update Events
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Event date (YYYY-MM-DD)"
+        required: true
+        type: string
+      title:
+        description: "Event title"
+        required: true
+        type: string
+      hosting:
+        description: "Hosting company / location"
+        required: true
+        type: string
+      link:
+        description: "Meetup.com event link"
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: "update-events"
+  cancel-in-progress: false
+
+jobs:
+  update-events:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Update events page
+        env:
+          EVENT_DATE: ${{ inputs.date }}
+          EVENT_TITLE: ${{ inputs.title }}
+          EVENT_HOSTING: ${{ inputs.hosting }}
+          EVENT_LINK: ${{ inputs.link }}
+        run: python3 .github/scripts/update-events.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add website/events.md
+          git diff --staged --quiet || git commit -m "chore: update events page for ${{ inputs.date }}"
+          git push
